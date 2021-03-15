@@ -25,7 +25,7 @@ Cypress
 ```sh
 'npx cypress run'
 or
-'npm run cy:open' to open Cypress to run the tests in interactive mode.
+'npx cypress open' to open Cypress to run the tests in interactive mode.
 ```
 
 ## Documentations
