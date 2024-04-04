@@ -26,9 +26,10 @@
 
 Cypress.Commands.add('isRegistered', (id, token, code) => {
     cy.request({
+        failOnStatusCode: false,
         url: `/users/${id}`,
         headers: { Authorization: `Bearer ${token}`}
-    }).its('body.code').should('be.equal', code)
+    }).its('status').should('be.equal', code)
     //Validação não está .its('status').should('be.equal', 200)
     //porque a api está retornando o statuscode 200 mesmo quando não existe o cadastro
     //apenas no corpo do response na variavel 'code' temos o valor correto
