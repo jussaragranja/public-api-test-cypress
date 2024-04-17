@@ -12,6 +12,11 @@ pipeline {
 
       }
     }
+      stage('Build') { 
+        steps {
+          sh 'npm run build'
+          }
+        }
     stage('e2e Tests') {
       steps {
         sh 'cypress run:cy'
