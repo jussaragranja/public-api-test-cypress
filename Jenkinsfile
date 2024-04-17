@@ -11,11 +11,12 @@ pipeline {
         stage('Dependencies') {
             steps {
                 sh 'npm i'
+                sh 'npm install cypress --save-dev'
             }
         }
         stage('e2e Tests') {
             steps {
-                sh 'cypress run'
+                sh 'npx cypress run'
             }
         }
         stage('Deploy') {
