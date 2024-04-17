@@ -9,7 +9,8 @@ pipeline {
   stages {
     stage('build and test') {
       steps {
-        sh 'export npm_config_cache=/path/to/cache'
+        sh 'npm config set force false'
+        sh 'npm cache clean --force'
         sh 'npm ci'
         sh "npm run test:ci:record"
       }
