@@ -7,11 +7,14 @@ pipeline {
     stage('Config') {
       steps {
         sh 'npm install cypress'
+        sh 'npm ci'
+        sh 'npm run cy:verify'
+
       }
     }
     stage('e2e Tests') {
       steps {
-        sh 'npm run cypress:ci'
+        sh 'cypress run:cy'
       }
     }
   }
