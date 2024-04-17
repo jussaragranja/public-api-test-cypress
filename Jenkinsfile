@@ -1,18 +1,26 @@
 pipeline {
-  agent {
-    // this image provides everything needed to run Cypress
-    docker {
-      image 'cypress/included:12.12.0'
+    agent {
+        docker {
+            image 'cypress/base:12.16.1' 
+            args '-p 3000:3000' 
+        }
     }
-  }
-
-  stages {
-    stage('build and test') {
-      steps {
-        //sh 'npm ci'
-        //sh "npm run test:ci:record"
-        sh "npx cypress run"
-      }
+    stages {
+        stage('Install Dependencies') { 
+            steps {
+                sh 'npm ci'
+                sh 'npm run cy:verify'
+            }
+        }
+        stage('Build') { 
+            steps {
+                sh 'npm run build'
+            }
+        }
+        stage('Test') { 
+            steps {
+                sh 'npm run ci:cy-run'
+            }
+        }
     }
-  }
 }
