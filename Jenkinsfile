@@ -11,8 +11,7 @@ pipeline {
     }
     stage('e2e Tests') {
       steps {
-        sh 'dnf install -y chromium xorg-x11-server-Xvfb'
-        sh 'cypress run --headless'
+        sh 'npx cypress run --record --spec "cypress/e2e/user-spec.cy.js"'
       }
     }
   }
