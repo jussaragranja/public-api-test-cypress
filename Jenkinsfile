@@ -11,7 +11,7 @@ pipeline {
     }
     stage('e2e Tests') {
       steps {
-        sh 'npx cypress run --record --spec "cypress/e2e/user-spec.cy.js"'
+        sh 'cypress run --browser chrome --headless'
       }
     }
   }
