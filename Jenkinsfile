@@ -1,18 +1,24 @@
 pipeline {
-  agent any
-
-  tools {nodejs "NodeJS"}
-
-  stages {
-    stage('Config') {
-      steps {
-        sh 'npm install cypress'
-      }
+    agent {
+        label '{functional_node}'
     }
-    stage('e2e Tests') {
-      steps {
-        sh 'cypress run --browser chrome --headless'
-      }
-    }
-  }
+        stages {
+            stage('TEST') {
+                agent {
+                        docker {
+                            image 'cypress/base:20.9.0'
+                        }
+                }
+                steps{
+                    git branch: 'development',
+                    credentialsId: '{redacted}',
+                    url: '{URL}'
+
+                    sh 'ng serve'
+                    sh 'npm i'
+                    sh 'npm run cypress:run'
+                }
+
+            }
+        }
 }
