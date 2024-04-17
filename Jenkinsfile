@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+        docker {
+            image 'cypress/base:12.16.1' 
+            args '-p 3000:3000' 
+        }
+    }
 
   tools {nodejs "NodeJS"}
 
@@ -9,7 +14,7 @@ pipeline {
       steps {
         sh 'npm install cypress'
         sh 'npm ci'
-        sh 'cypress verify'
+        sh 'npm run cypress verify'
       }
     }
     
