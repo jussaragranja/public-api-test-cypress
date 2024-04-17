@@ -9,8 +9,9 @@ pipeline {
   stages {
     stage('build and test') {
       steps {
-        sh 'npm ci'
-        sh "npm run test:ci:record"
+        //sh 'npm ci'
+        //sh "npm run test:ci:record"
+        sh "npx cypress run"
       }
     }
   }
