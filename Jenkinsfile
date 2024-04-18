@@ -1,7 +1,7 @@
 pipeline {
   agent {
     dockerfile {
-      filename 'Dockerfile'
+      filename 'public-api-test-cypress/Dockerfile'
     }
   }
   stages {
