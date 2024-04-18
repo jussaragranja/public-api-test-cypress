@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('E2E Tests') {
       steps {
-        sh 'docker run -v $PWD -w /e2e cypress/included:3.4.0'
+        sh 'docker run -v $PWD -w /e2e cypress/included:12.12.0'
       }
     }
   }
