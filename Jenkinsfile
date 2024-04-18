@@ -7,11 +7,9 @@ pipeline {
   }
 
   stages {
-    stage('build and test') {
+    stage('E2E Tests') {
       steps {
-        //sh 'npm ci'
-        //sh "npm run test:ci:record"
-        sh "cypress run"
+        sh 'docker run -v $PWD:/e2e -w /e2e cypress/included:3.4.0'
       }
     }
   }
