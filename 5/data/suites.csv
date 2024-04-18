@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Apr 18 16:01:47 GMT 2024","Thu Apr 18 16:01:47 GMT 2024","618","Delete user","","","","","Delete user - sucess",""
+"passed","Thu Apr 18 16:01:46 GMT 2024","Thu Apr 18 16:01:47 GMT 2024","333","Update user details","","","","","Update user details - sucess",""
+"passed","Thu Apr 18 16:01:46 GMT 2024","Thu Apr 18 16:01:46 GMT 2024","692","Create a new user","","","","","Create a new user - sucess",""
