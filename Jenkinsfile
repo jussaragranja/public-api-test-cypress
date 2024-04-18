@@ -1,9 +1,4 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'Dockerfile'
-    }
-  }
   stages {
     stage('E2E Tests') {
       steps {
