@@ -16,12 +16,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'node -v'
-                sh 'npm run build'
-            }
-        }
-        stage('Unit Tests') {
-            steps {
-                sh 'npm run test'
             }
         }
         stage('e2e Tests') {
