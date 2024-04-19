@@ -11,7 +11,8 @@ pipeline {
         stage('Dependencies') {
             steps {
                 sh 'npm i'
-                sh 'Xvfb :99 & export DISPLAY=:99'
+                sh 'Xvfb -screen 0 1024x768x24 :99 &'
+                sh 'export DISPLAY=:99'
             }
         }
         stage('Build') {
