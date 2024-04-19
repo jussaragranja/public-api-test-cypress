@@ -11,6 +11,7 @@ pipeline {
         stage('Dependencies') {
             steps {
                 sh 'npm i'
+                sh 'Xvfb :99 & export DISPLAY=:99'
             }
         }
         stage('Build') {
@@ -26,6 +27,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh 'pkill Xvfb'
             }
         }
     }
