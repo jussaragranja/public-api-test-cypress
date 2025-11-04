@@ -3,4 +3,3 @@ cypress/videos/
 node_modules/
 cypress/screenshots/
 allure-results/
-package-lock.json
