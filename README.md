@@ -48,7 +48,7 @@ API_TOKEN=your_token_here
 
 ***Never share your token in public repositories!***
 
-### Running the Tests
+## ▶️ Running the Tests
 
 #### Headless mode (terminal)
 
