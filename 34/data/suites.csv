@@ -1,4 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","933","should create a new user successfully","User API - Create","Tue Nov 04 23:24:48 UTC 2025","passed","Tue Nov 04 23:24:49 UTC 2025","","","",""
-"","659","should delete the user successfully","User API - Delete","Tue Nov 04 23:24:51 UTC 2025","passed","Tue Nov 04 23:24:52 UTC 2025","","","",""
-"","345","should update user email successfully","User API - Update","Tue Nov 04 23:24:54 UTC 2025","passed","Tue Nov 04 23:24:54 UTC 2025","","","",""
