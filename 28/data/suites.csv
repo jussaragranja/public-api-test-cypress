@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","343","Update user details - sucess","Update user details","Tue Nov 04 22:36:51 UTC 2025","passed","Tue Nov 04 22:36:51 UTC 2025","","","",""
+"","742","Create a new user - sucess","Create a new user","Tue Nov 04 22:36:50 UTC 2025","passed","Tue Nov 04 22:36:51 UTC 2025","","","",""
+"","666","Delete user - sucess","Delete user","Tue Nov 04 22:36:51 UTC 2025","passed","Tue Nov 04 22:36:52 UTC 2025","","","",""
