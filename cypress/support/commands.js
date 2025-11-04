@@ -1,36 +1,36 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+Cypress.Commands.add('createUser', (userData) => {
+  return cy.fixture('user').then((user) => {
+    const body = userData || user;
+    return cy.request({
+      url: '/users',
+      method: 'POST',
+      headers: { Authorization: `Bearer ${Cypress.env('API_TOKEN')}` },
+      body,
+    });
+  });
+});
 
-Cypress.Commands.add('isRegistered', (id, token, code) => {
-    cy.request({
-        failOnStatusCode: false,
-        url: `/users/${id}`,
-        headers: { Authorization: `Bearer ${token}`}
-    }).its('status').should('be.equal', code)
-    //Validação não está .its('status').should('be.equal', 200)
-    //porque a api está retornando o statuscode 200 mesmo quando não existe o cadastro
-    //apenas no corpo do response na variavel 'code' temos o valor correto
-})
+Cypress.Commands.add('updateUser', (id, data) => {
+  return cy.request({
+    url: `/users/${id}`,
+    method: 'PUT',
+    headers: { Authorization: `Bearer ${Cypress.env('API_TOKEN')}` },
+    body: data,
+  });
+});
+
+Cypress.Commands.add('deleteUser', (id) => {
+  return cy.request({
+    url: `/users/${id}`,
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${Cypress.env('API_TOKEN')}` },
+  });
+});
+
+Cypress.Commands.add('isRegistered', (id, expectedStatus = 200) => {
+  return cy.request({
+    failOnStatusCode: false,
+    url: `/users/${id}`,
+    headers: { Authorization: `Bearer ${Cypress.env('API_TOKEN')}` },
+  }).its('status').should('eq', expectedStatus);
+});
