@@ -4,9 +4,6 @@
   <a href="https://gorest.co.in/" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://twitter.com/JuuhGranja" target="_blank">
-    <img alt="Twitter: JuuhGranja" src="https://img.shields.io/twitter/follow/JuuhGranja.svg?style=social" />
-  </a>
 </p>
 
 > Test project using Cypress to test the Public Api GoRest
@@ -39,4 +36,3 @@ or
 * LinkedIn: [@jussaragranja](https://linkedin.com/in/jussaragranja)
 * Github: [@jussaragranja](https://github.com/jussaragranja)
 * GitLab: [@jussaragranja](https://gitlab.com/jussaragranja)
-* Twitter: [@JuuhGranja](https://twitter.com/JuuhGranja)
